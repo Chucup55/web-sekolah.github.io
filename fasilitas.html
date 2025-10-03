@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasilitas Sekolah | SMA NEGERI MAJU</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* 1. Atur warna latar belakang tag BODY dan MAIN-CONTENT menjadi putih */
+        body {
+            background-color: #ffffff !important; 
+        }
+
+        #main-content {
+            background-image: none !important; /* Menghapus gambar latar belakang sekolah */
+            background-color: #ffffff !important; /* Memaksa warna putih sebagai latar utama */
+            color: #333; /* Mengubah warna teks default menjadi hitam/gelap */
+            min-height: 100vh; 
+        }
+        
+        /* 2. SOLUSI UTAMA: Menonaktifkan overlay gelap (yang menyebabkan abu-abu) */
+        #main-content::before {
+            content: none !important; 
+        }
+
+        /* 3. Aturan konten unik lainnya (agar tata letak konten utama rapi) */
+        main {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            text-align: left; 
+        }
+        
+        /* Pertahankan gaya .fasilitas-item yang sudah ada */
+        .fasilitas-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .fasilitas-item h3 {
+            color: #004080; 
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-content">
+        
+        <header>
+            <span class="logo">SD NEGERI SUMBER MAKMUR</span>
+            <button id="menu-toggle" aria-label="Buka Menu">&#9776;</button> 
+        </header>
+
+        <main>
+            <h1>Fasilitas Pendukung Pendidikan</h1>
+            <p>SD NEGERI SUMBER MAKMUR menyediakan berbagai fasilitas modern untuk mendukung kegiatan belajar mengajar dan pengembangan bakat siswa secara maksimal.</p>
+            
+            <section id="daftar-fasilitas">
+                
+                <div class="fasilitas-item">
+                    <h3>1. Laboratorium Komputer</h3>
+                    <p>Dilengkapi dengan 40 unit PC terbaru, koneksi internet berkecepatan tinggi, dan digunakan untuk mata pelajaran TIK, simulasi digital, serta UNBK.</p>
+                    <ul>
+                        <li>Kapasitas: 40 Siswa</li>
+                        <li>Software: Microsoft Office, Adobe Creative Suite (Lisensi Edukasi)</li>
+                    </ul>
+                </div>
+                
+                <div class="fasilitas-item">
+                    <h3>2. Perpustakaan Digital (E-Library)</h3>
+                    <p>Menawarkan koleksi buku fisik dan akses ke ribuan jurnal serta e-book. Tempat yang nyaman untuk membaca dan melakukan riset kelompok.</p>
+                    <p><em>Jam Operasional: 07.00 - 16.00 WIB</em></p>
+                </div>
+                
+                <div class="fasilitas-item">
+                    <h3>3. Lapangan Olahraga Multifungsi</h3>
+                    <p>Tersedia lapangan basket, voli, dan futsal standar internasional, serta tribun penonton. Digunakan untuk kegiatan PJKR dan ekstrakurikuler.</p>
+                </div>
+                
+                <div class="fasilitas-item">
+                    <h3>4. Ruang Kelas Interaktif</h3>
+                    <p>Setiap ruang kelas dilengkapi dengan proyektor, AC, dan papan tulis interaktif (Smart Board) untuk menunjang metode pengajaran modern.</p>
+                </div>
+
+            </section>
+            
+        </main>
+    </div>
+
+    <div id="sidebar-menu" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="close-menu">&times;</a>
+        <h2>Menu Sekolah</h2>
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil Sekolah</a>
+        <a href="fasilitas.html">Fasilitas</a> 
+        <a href="pengumuman.html">Pengumuman</a>
+        <a href="kontak.html">Kontak</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

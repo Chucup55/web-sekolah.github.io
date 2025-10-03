@@ -1,0 +1,221 @@
+/* Styling Dasar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Bagian Latar Belakang Sekolah */
+#main-content {
+    /* Ganti URL_GAMBAR_SEKOLAH dengan link/path gambar sekolah Anda */
+    background-image: url('bg\ sekolah.jpg'); 
+    background-size: cover; /* Memastikan gambar menutupi seluruh area */
+    background-position: center; 
+    background-attachment: fixed; /* Membuat latar belakang tetap saat discroll */
+    min-height: 100vh; /* Tinggi minimum 100% viewport */
+    color: white; /* Warna teks di atas latar belakang */
+    transition: margin-right .5s; /* Transisi untuk menggeser konten saat menu dibuka */
+    
+}
+
+/* Overlay Gelap Agar Teks Terlihat Jelas */
+#main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Lapisan gelap semi-transparan */
+    z-index: 1;
+}
+
+/* Memastikan Konten di atas Overlay */
+header, main {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+/* Header dan Tombol Menu */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 51, 102, 0.8); /* Warna header sekolah */
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#menu-toggle {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Konten Utama */
+main {
+    padding-top: 50px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.info-box {
+    margin-top: 5px;
+    background-color: rgba(0.4, 10, 10, 0.4);
+    padding: 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* ============================
+   Gaya Menu Slide (Sidebar)
+   ============================ 
+*/
+
+.sidebar {
+    height: 100%; /* Tinggi penuh */
+    width: 0; /* Awalnya tertutup */
+    position: fixed; 
+    z-index: 100; /* Paling atas */
+    top: 0;
+    right: 0; /* Muncul dari kanan */
+    background-color: #111; /* Latar belakang menu */
+    overflow-x: hidden;
+    transition: 0.5s; /* Efek transisi halus */
+    padding-top: 60px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 15px 25px 15px 35px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+    background-color: #333;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar h2 {
+    color: white;
+    padding: 0 25px 10px 35px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+/* Responsif: Menyesuaikan tampilan untuk layar yang lebih kecil */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 16px;
+    }
+    }/* --- Styling Khusus untuk LightBox/Modal --- */
+
+.modal {
+    display: none;        /* Sembunyikan modal secara default */
+    position: fixed;      /* KUNCI: Membuat modal tetap di viewport, tidak peduli scroll */
+    z-index: 9999;        /* KUNCI: Pastikan di atas SEMUA elemen lain (Header, Sidebar, dll.) */
+    left: 0;
+    top: 0;
+    width: 100%;          /* KUNCI: Memenuhi lebar layar */
+    height: 100%;         /* KUNCI: Memenuhi tinggi layar */
+    overflow: auto;       /* Mengizinkan scroll jika gambar terlalu besar untuk viewport */
+    background-color: rgba(0,0,0,0.95); /* Latar belakang hitam yang sangat gelap */
+    padding-top: 0;       /* Pastikan tidak ada padding yang mendorong ke bawah */
+    box-sizing: border-box; /* Memastikan padding/border tidak menambah ukuran elemen */
+}
+
+/* Gambar di dalam Modal */
+.modal-content {
+    margin: auto;         /* Pusatkan gambar secara horizontal */
+    display: block;
+    max-width: 95%;       /* Batas lebar gambar 95% dari lebar modal */
+    max-height: 95vh;     /* Batas tinggi gambar 95% dari tinggi viewport */
+    object-fit: contain;  /* Memastikan gambar tidak terpotong dan sesuai proporsi */
+    animation-name: zoomIn; /* Animasi saat muncul */
+    animation-duration: 0.6s;
+}
+
+/* Tombol Tutup */
+.close-btn {
+    position: absolute;
+    top: 20px;            /* Sedikit lebih rendah dari atas */
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 50px;      /* Ukuran lebih besar agar mudah diklik */
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;       /* Pastikan tombol tutup di atas gambar modal */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Keterangan Gambar (Caption) */
+.caption {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.1em;
+}
+
+/* Animasi Zoom saat Muncul */
+@keyframes zoomIn {
+    from {transform: scale(0.7); opacity: 0.5;} 
+    to {transform: scale(1); opacity: 1;}
+}
+
+
+/* --- Styling untuk Pengumuman Thumbnail (dari sebelumnya) --- */
+.pengumuman-gambar-wrapper { max-width: 800px; margin: 30px auto; text-align: center; }
+.pengumuman-link {
+    display: block; position: relative; text-decoration: none; overflow: hidden; 
+    border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+.pengumuman-link:hover { transform: translateY(-5px); }
+.pengumuman-banner { width: 100%; height: auto; display: block; }
+.banner-overlay {
+    position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px 0;
+    background-color: rgba(0, 64, 128, 0.85); color: white; font-weight: bold;
+    font-size: 1.1em; opacity: 0.9;
+}
+.tanggal-terbit { font-size: 0.9em; color: #666; margin-top: 10px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }

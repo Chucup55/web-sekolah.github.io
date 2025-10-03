@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami | SMA NEGERI MAJU</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* 1. Atur warna latar belakang tag BODY dan MAIN-CONTENT menjadi putih */
+        body {
+            background-color: #ffffff !important; 
+        }
+
+        #main-content {
+            background-image: none !important; /* Menghapus gambar latar belakang sekolah */
+            background-color: #ffffff !important; /* Memaksa warna putih sebagai latar utama */
+            color: #333; /* Warna teks gelap */
+            min-height: 100vh; 
+        }
+        
+        /* 2. SOLUSI UTAMA: Menonaktifkan overlay gelap (yang menyebabkan warna abu-abu) */
+        #main-content::before {
+            content: none !important; 
+        }
+
+        /* 3. Aturan konten unik lainnya */
+        main {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            text-align: left; 
+        }
+        
+        /* Styling tambahan untuk formulir */
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Memastikan padding tidak melebihi lebar elemen */
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .contact-form button {
+            background-color: #004080;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f8ff; /* Latar belakang informasi kontak lebih terang */
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-content">
+        
+        <header>
+            <span class="logo">SD NEGERI SUMBER MAKMUR</span>
+            <button id="menu-toggle" aria-label="Buka Menu">&#9776;</button> 
+        </header>
+
+        <main>
+            <h1>Hubungi Kami</h1>
+            <p>Kami siap menjawab pertanyaan Anda. Silakan gunakan formulir di bawah ini atau hubungi kami melalui informasi kontak yang tersedia.</p>
+            
+            <section class="contact-form">
+                <h2>Kirim Pesan Cepat</h2>
+                <form action="#" method="POST">
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="pesan">Pesan:</label>
+                    <textarea id="pesan" name="pesan" required></textarea>
+                    
+                    <button type="submit">Kirim Pesan</button>
+                </form>
+            </section>
+            
+            <section class="contact-info">
+                <h2>Informasi Sekolah</h2>
+                <p><strong>Alamat:</strong> Jl. Desa Sumber Makmur, Desa Sumber Makmur, Kec. Parenggean, Kab. Kotawaringin Timur, Prov. Kalimantan Tengah Kode Pos 74355</p>
+                <p><strong>Telepon:</strong> (021) 12345678</p>
+                <p><strong>Email:</strong> info@smamajusukses.sch.id</p>
+                <p><strong>Jam Kerja:</strong> Senin - Sabtu, 07.00 - 12.00 WIB</p>
+            </section>
+            
+        </main>
+    </div>
+
+    <div id="sidebar-menu" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="close-menu">&times;</a>
+        <h2>Menu Sekolah</h2>
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil Sekolah</a>
+        <a href="fasilitas.html">Fasilitas</a>
+        <a href="pengumuman.html">Pengumuman</a>
+        <a href="kontak.html">Kontak</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

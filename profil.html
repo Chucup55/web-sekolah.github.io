@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Sekolah | SDN SUMBER MAKMUR</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+
+    /* 1. Override CSS agar halaman ini berlatar belakang putih */
+    body {
+        background-color: #ffffff !important; 
+    }
+
+    #main-content {
+        background-image: none !important; /* Menghilangkan gambar latar */
+        background-color: #ffffff !important; /* Memaksa warna putih */
+        color: #333; /* Warna teks gelap */
+        min-height: 100vh; 
+    }
+    
+    /* =================================================== */
+    /* 2. SOLUSI: HAPUS/NONAKTIFKAN OVERLAY GELAP! */
+    /* =================================================== */
+    #main-content::before {
+        content: none !important; 
+    }
+
+    /* 3. Aturan konten unik lainnya */
+    main {
+        padding: 40px;
+        max-width: 900px;
+        margin: auto;
+        text-align: left; 
+    }
+    </style>
+</head>
+<body>
+
+    <div id="main-content">
+        
+        <header>
+            <span class="logo">SDN SUMBER MAKMUR</span>
+            <button id="menu-toggle" aria-label="Buka Menu">&#9776;</button> 
+        </header>
+
+        <main>
+            <h1>Profil dan Sejarah Sekolah</h1>
+            
+            <section id="visi-misi">
+                <h2>Visi dan Misi</h2>
+                <p><strong>Visi:</strong> Mewujudkan Generasi Mandiri, Berprestasi, dan Berbudi Luhur.</p>
+                <p><strong>Misi:</strong></p>
+                <ul>
+                    <li>Meningkatkan kualitas pembelajaran yang inovatif.</li>
+                    <li>Mengembangkan potensi bakat dan minat siswa.</li>
+                    <li>Menanamkan nilai-nilai karakter luhur.</li>
+                </ul>
+            </section>
+            
+            <hr>
+            
+            <section id="sejarah">
+                <h2>Sejarah Singkat</h2>
+                <p>SD NEGERI SUMBER MAKMUR didirikan pada tanggal 15 Agustus 1980 di atas lahan seluas 10.000m². Sejak awal, sekolah ini berkomitmen untuk menjadi pusat keunggulan di wilayah ini. Kami telah melewati berbagai fase pembangunan dan modernisasi, yang terbaru adalah renovasi perpustakaan pada tahun 2022.</p>
+            </section>
+            
+        </main>
+    </div>
+
+    <div id="sidebar-menu" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="close-menu">&times;</a>
+        <h2>Menu Sekolah</h2>
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil Sekolah</a> 
+        <a href="fasilitas.html">Fasilitas</a>
+        <a href="pengumuman.html">Pengumuman</a>
+        <a href="kontak.html">Kontak</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
